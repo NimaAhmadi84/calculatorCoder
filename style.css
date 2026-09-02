@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .calculator {
+    background: rgba(30, 30, 50, 0.95);
+}
+
+.display-container {
+    margin-bottom: 20px;
+}
+
+#history {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    color: #888;
+    font-size: 14px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+body.dark-mode #history {
+    color: #aaa;
+}
+
+#display {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f0f0f0;
+    text-align: left;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode #display {
+    background: #2a2a4a;
+    color: #fff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn-number {
+    background: #f8f9fa;
+    color: #333;
+}
+
+body.dark-mode .btn-number {
+    background: #3a3a5a;
+    color: #fff;
+}
+
+.btn-operator {
+    background: #667eea;
+    color: white;
+}
+
+.btn-operator:hover {
+    background: #5568d3;
+}
+
+.btn-function {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-function:hover {
+    background: #ee5a5a;
+}
+
+.btn-equals {
+    background: #51cf66;
+    color: white;
+}
+
+.btn-equals:hover {
+    background: #40c057;
+}
+
+.btn-advanced {
+    background: #339af0;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-advanced:hover {
+    background: #228be6;
+}
+
+.theme-toggle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#themeBtn {
+    padding: 10px 20px;
+    background: #ffd43b;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#themeBtn:hover {
+    background: #fcc41d;
+}
+
+.history-panel {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+body.dark-mode .history-panel {
+    background: rgba(50, 50, 70, 0.5);
+}
+
+.history-panel h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+body.dark-mode .history-panel h3 {
+    color: #51cf66;
+}
+
+#historyList {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+body.dark-mode .history-item {
+    border-bottom: 1px solid #444;
+    color: #ccc;
+}
+
+.history-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 5px;
+}
+
+.btn-clear-history {
+    width: 100%;
+    padding: 10px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-clear-history:hover {
+    background: #ee5a5a;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .calculator {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    button {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    #display {
+        font-size: 24px;
+    }
+}

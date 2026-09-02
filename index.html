@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماشین حساب پیشرفته</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <input type="text" id="history" readonly>
+            <input type="text" id="display" readonly>
+        </div>
+        
+        <div class="buttons">
+            <!-- ردیف ۱ -->
+            <button class="btn-function" onclick="clearAll()">AC</button>
+            <button class="btn-function" onclick="clearEntry()">C</button>
+            <button class="btn-function" onclick="toggleSign()">±</button>
+            <button class="btn-operator" onclick="appendOperator('/')">÷</button>
+            
+            <!-- ردیف ۲ -->
+            <button class="btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btn-number" onclick="appendNumber('9')">9</button>
+            <button class="btn-operator" onclick="appendOperator('*')">×</button>
+            
+            <!-- ردیف ۳ -->
+            <button class="btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btn-number" onclick="appendNumber('6')">6</button>
+            <button class="btn-operator" onclick="appendOperator('-')">−</button>
+            
+            <!-- ردیف ۴ -->
+            <button class="btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btn-number" onclick="appendNumber('3')">3</button>
+            <button class="btn-operator" onclick="appendOperator('+')">+</button>
+            
+            <!-- ردیف ۵ -->
+            <button class="btn-number" onclick="appendNumber('0')">0</button>
+            <button class="btn-number" onclick="appendDecimal()">.</button>
+            <button class="btn-equals" onclick="calculate()">=</button>
+            <button class="btn-operator" onclick="appendOperator('%')">%</button>
+            
+            <!-- ردیف ۶ - عملیات پیشرفته -->
+            <button class="btn-advanced" onclick="squareRoot()">√</button>
+            <button class="btn-advanced" onclick="square()">x²</button>
+            <button class="btn-advanced" onclick="power()">x^y</button>
+            <button class="btn-advanced" onclick="factorial()">n!</button>
+            
+            <!-- ردیف ۷ - ثابت‌ها و توابع -->
+            <button class="btn-advanced" onclick="appendConstant('pi')">π</button>
+            <button class="btn-advanced" onclick="appendConstant('e')">e</button>
+            <button class="btn-advanced" onclick="sin()">sin</button>
+            <button class="btn-advanced" onclick="cos()">cos</button>
+            
+            <!-- ردیف ۸ - بیشتر -->
+            <button class="btn-advanced" onclick="tan()">tan</button>
+            <button class="btn-advanced" onclick="log()">log</button>
+            <button class="btn-advanced" onclick="ln()">ln</button>
+            <button class="btn-advanced" onclick="toggleParenthesis()">( )</button>
+        </div>
+        
+        <div class="theme-toggle">
+            <button onclick="toggleTheme()" id="themeBtn">🌙 حالت شب</button>
+        </div>
+        
+        <div class="history-panel" id="historyPanel">
+            <h3>تاریخچه محاسبات</h3>
+            <div id="historyList"></div>
+            <button onclick="clearHistory()" class="btn-clear-history">پاک کردن تاریخچه</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
